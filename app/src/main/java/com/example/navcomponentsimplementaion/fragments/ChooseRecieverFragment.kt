@@ -42,7 +42,7 @@ class ChooseRecieverFragment : Fragment() {
 
             btnReceiverNameNext.setOnClickListener {
                 val action =
-                    ChooseRecieverFragmentDirections.actionChooseRecieverFragmentToReciptFragment(
+                    ChooseRecieverFragmentDirections.actionChooseRecieverFragmentToConfirmDialogFragment2(
                         name = receiverNameTextView.text.toString(),
                         amount = amountTextView.text.toString().toInt()
                     )

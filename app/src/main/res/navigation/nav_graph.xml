@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.navcomponentsimplementaion.fragments.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_viewBalanceFragment"
@@ -35,31 +35,26 @@
     <fragment
         android:id="@+id/viewBalanceFragment"
         android:name="com.example.navcomponentsimplementaion.fragments.ViewBalanceFragment"
-        android:label="fragment_view_balance"
+        android:label="View Balance"
         tools:layout="@layout/fragment_view_balance" />
     <fragment
         android:id="@+id/viewTransactionFragment"
         android:name="com.example.navcomponentsimplementaion.fragments.ViewTransactionFragment"
-        android:label="fragment_view_transaction"
+        android:label="Transaction History"
         tools:layout="@layout/fragment_view_transaction" />
     <fragment
         android:id="@+id/chooseRecieverFragment"
         android:name="com.example.navcomponentsimplementaion.fragments.ChooseRecieverFragment"
-        android:label="fragment_view_transaction"
+        android:label="Send Money"
         tools:layout="@layout/fragment_view_transaction">
         <action
-            android:id="@+id/action_chooseRecieverFragment_to_reciptFragment"
-            app:destination="@id/reciptFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:popUpTo="@id/homeFragment" />
+            android:id="@+id/action_chooseRecieverFragment_to_confirmDialogFragment2"
+            app:destination="@id/confirmDialogFragment2" />
     </fragment>
     <fragment
         android:id="@+id/reciptFragment"
         android:name="com.example.navcomponentsimplementaion.fragments.ReciptFragment"
-        android:label="fragment_transaction_recipt"
+        android:label="Recipt"
         tools:layout="@layout/fragment_transaction_recipt">
         <argument
             android:name="name"
@@ -68,6 +63,22 @@
             android:name="amount"
             android:defaultValue="-1" />
     </fragment>
+    <dialog
+        android:id="@+id/confirmDialogFragment2"
+        android:name="com.example.navcomponentsimplementaion.fragments.ConfirmDialogFragment"
+        android:label="Confirm"
+        tools:layout="@layout/fragment_confirm_dialog">
+        <action
+            android:id="@+id/action_confirmDialogFragment2_to_reciptFragment"
+            app:destination="@id/reciptFragment"
+            app:popUpTo="@id/homeFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="amount"
+            app:argType="integer" />
+    </dialog>
 </navigation>
 
 
